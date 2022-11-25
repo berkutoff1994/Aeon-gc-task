@@ -15,9 +15,14 @@ export function MyGantt ({data}: {data: any}) {
         <h1>{titleProject} / {dataPeriod}</h1>
         <button className='exportButton'><Download /> Export</button>
       </div>
-      <div className='gantt-content-wrapper'>
-        <Table data={data}/>
+      <div className='wrapper-shadow'>
+        <div className='gantt-content-wrapper'>
+          <Table data={data}/>
+        </div>
+        <div className='shadow'></div>
       </div>
+      
+      
     </div>
   )
 }

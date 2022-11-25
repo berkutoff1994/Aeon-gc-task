@@ -5,6 +5,7 @@
   
     th {
       border: 1px solid rgba(38, 40, 66, 0.12);
+      border-top: none;
     }
   
     .taskList {
@@ -17,9 +18,10 @@
     }
 
     .headcol {
-      position: -webkit-sticky;
-      position: sticky;
-      border: 1px solid rgba(38, 40, 66, 0.12);
+
+      .headcol-block {
+        align-items: center;
+      }
     }
   }
   td {
