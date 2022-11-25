@@ -1,17 +1,14 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { LavelFive } from '../../icons/lavelFive';
 import { LavelFour } from '../../icons/lavelFour';
 import { LavelOne } from '../../icons/lavelOne';
 import { LavelThree } from '../../icons/lavelThree';
 import { LavelTwo } from '../../icons/lavelTwo';
-import { addTasks } from '../../store/guntt/action';
 import { getContentRow, getEmptyRow } from '../../utils/getTable';
 import { getArrayTasks } from '../../utils/getTasks';
 import './styles/tableBody.scss';
 
 export function TableBody ({chart, result}: any) {
-  const dispatch = useDispatch()
   let obj = [chart]
   let parent = 0; 
   let lavel = 0
@@ -28,10 +25,6 @@ export function TableBody ({chart, result}: any) {
     if(task.lavel === 4) task.icon = <LavelFour />
     if(task.lavel === 5) task.icon = <LavelFive />
   })
-
-  dispatch(addTasks(array))
-
-  // const data = useSelector((state) => state.tableName)
   
   //скрываем и раскрываем строки по клику на иконку
   const onHandler = (e: any) => {

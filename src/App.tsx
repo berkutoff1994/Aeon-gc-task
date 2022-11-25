@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './styles/App.scss';
 import { MyGantt } from './components/MyGantt';
-import { Provider } from 'react-redux';
-import { store } from './store';
 
 function App() {
   const [error, setError] = useState(null);
@@ -30,11 +28,9 @@ function App() {
     return <div>Загрузка...</div>;
   } else {
   return (
-    <Provider store={store}>
-      <div className="App">
-        <MyGantt data={data}/>
-      </div>
-    </Provider>
+    <div className="App">
+      <MyGantt data={data}/>
+    </div>
     );
   }
 }
