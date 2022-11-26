@@ -1,0 +1,33 @@
+$white: white;
+$light-blue: #F7F8FC;
+$border-general: 1px solid rgba(38, 40, 66, 0.12);
+$Radius: 10px;
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin large {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+@mixin medium {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@mixin small {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin super-small {
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 16px;
+}

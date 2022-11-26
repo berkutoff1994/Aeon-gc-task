@@ -1,51 +1,47 @@
+@import "../../../styles/variables.scss";
+
 .tbody {
-  background: white;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
+  background: $white;
+  @include medium;
 
   .displayNone {
     display: none;
   }
+
   tr{ 
-    margin: 0;
-    padding: 0;
     height: 40px;
+
     th {
-      margin: 0;
-      padding: 0;
-      border: 1px solid rgba(38, 40, 66, 0.12);
+      border: $border-general;
     }
     td {
-      border-right: 1px solid rgba(38, 40, 66, 0.12);
-      padding: 0;
+      border-right: $border-general;
     }
   }
+  
   .headcol {
     position: -webkit-sticky;
     position: sticky;
     padding: 10px 0;
     padding-left: 10px;
-    border: 1px solid rgba(38, 40, 66, 0.12);
+    border: $border-general;
     border-left: none;
 
-    .headcol-block {
+    .headcol__block {
       display: flex;
       align-items: center;
 
       div:not(:last-child) {
         margin-right: 7px;
       }
-      .child-count {
+      .headcol__child-count {
         color: #8B8C9E;
-        font-weight: 100;
-        font-size: 12px;
-        line-height: 16px;
+        @include super-small;
       }
-      .arrow-icon {
+      .headcol__arrow-icon {
         cursor: pointer;
       }
-      .arrow-icon__active svg {
+      .headcol__arrow-icon__active svg {
         transform: rotate(180deg)
       }
     }
@@ -58,13 +54,14 @@
       left: 0;
       top: 20%;
       display: flex;
+      @include medium;
 
       .progress-line {
         width: 20px;
         height: 24px;
         margin: 0;
         margin-right: 8px;
-        background: #E2EBFF;
+        background: $white;
         border-radius: 4px;
         box-sizing: border-box;
 

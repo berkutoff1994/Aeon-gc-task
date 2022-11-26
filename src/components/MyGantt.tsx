@@ -21,8 +21,6 @@ export function MyGantt ({data}: {data: any}) {
         </div>
         <div className='shadow'></div>
       </div>
-      
-      
     </div>
   )
 }

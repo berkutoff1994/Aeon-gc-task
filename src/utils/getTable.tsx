@@ -16,11 +16,11 @@ export function getContentRow(result: string[], array: any[], onHandler: any) {
     array.map((item) => 
       <tr className='fullRow' id={item.id}>
         <td className='headcol'>
-          <div className='headcol-block' style={{paddingLeft: `calc(${item.lavel} * 10px)`}}>
-            <div className='arrow-icon' onClick={onHandler}>{item.child > 0 ? <ArrowIcon /> : ''}</div>
-            <div className='lavel-icon'>{item.icon}</div>
-            <div className='child-count'>{item.child}</div>
-            <div className='title'>{item.title}</div>
+          <div className='headcol__block' style={{paddingLeft: `calc(${item.lavel} * 10px)`}}>
+            <div className='headcol__arrow-icon' onClick={onHandler}>{item.child > 0 ? <ArrowIcon /> : ''}</div>
+            <div className='headcol__lavel-icon'>{item.icon}</div>
+            <div className='headcol__child-count'>{item.child}</div>
+            <div className='headcol__title'>{item.title}</div>
           </div>
         </td>
         {result.map((col: string) => 

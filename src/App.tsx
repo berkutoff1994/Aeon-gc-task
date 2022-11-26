@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './styles/App.scss';
 import { MyGantt } from './components/MyGantt';
 
 function App() {
