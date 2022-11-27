@@ -1,7 +1,6 @@
-import React from 'react';
 import './styles/tableHeader.scss';
 import dayjs from 'dayjs';
-import { getDate } from '../../utils/getDate';
+
 
 export function TableHeader ({result, weeksArray}: any) {
   let month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -17,7 +16,7 @@ export function TableHeader ({result, weeksArray}: any) {
             let lastDayOfWeek = new Date(week[week.length-1])
             let lastMonth = month[lastDayOfWeek.getMonth()]
             
-          return <th className='weeks-th' colSpan={week.length}>{firstDayOfWeek.getDate()} {firstMonth} - {lastDayOfWeek.getDate()} {lastMonth}</th>
+          return <th key={week} className='weeks-th' colSpan={week.length}>{firstDayOfWeek.getDate()} {firstMonth} - {lastDayOfWeek.getDate()} {lastMonth}</th>
           })
         }
       </tr>

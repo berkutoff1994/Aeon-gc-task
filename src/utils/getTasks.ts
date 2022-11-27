@@ -13,6 +13,7 @@ interface Task {
   background: string,
   border: string,
   icon: any,
+  display: boolean,
 }
 
 export function getArrayTasks(obj: any, parent: number | string, lavel: number){
@@ -35,6 +36,7 @@ export function getArrayTasks(obj: any, parent: number | string, lavel: number){
         background: '',
         border: '',
         icon: null,
+        display: true
       }
       task.id = obj[i].id;
       task.title = obj[i].title;
@@ -69,10 +71,8 @@ export function getArrayTasks(obj: any, parent: number | string, lavel: number){
         task.border = '#2DB77B'
       }
 
-      console.log(task)
       //пушим таску в массив
       array.push(task)
-      console.log(obj[i].sub)
       if(obj[i].sub) {
         getTasks(obj[i].sub, task.id, task.lavel)
       }

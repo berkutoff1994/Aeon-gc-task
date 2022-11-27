@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MyGantt } from './components/MyGantt';
+import { useDispatch } from 'react-redux';
+import { addDataAction } from './store/taskArray/action';
 
 function App() {
-  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [data, setData] = useState([]);
-
+  const dispatch = useDispatch()
+  
   // получаем входные данные для рендера
   useEffect(() => {
     fetch("http://82.202.204.94/tmp/test.php")
@@ -15,17 +17,11 @@ function App() {
           setIsLoaded(true);
           setData(result);
         },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      )
-  }, [])
-  if (error) {
-    return <div>Ошибка: {error}</div>;
-  } else if (!isLoaded) {
+      )}, [])
+  if (!isLoaded) {
     return <div>Загрузка...</div>;
   } else {
+    dispatch(addDataAction(data))
   return (
     <div className="App">
       <MyGantt data={data}/>

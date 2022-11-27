@@ -2,18 +2,17 @@ export interface TableName {
   value: string,
 }
 
-//создаем перечисление, которое будет содержать в себе все типы экшенов
-export enum homePageActionsTypes {
-  ADD_GAME_PARAMS = ' ADD_GAME_PARAMS',
+//создаем перечисление, которое будет содержать в себе все типы экшенов (на случай масштабирования приложения)
+export enum tableActionsTypes {
+  ADD_DATA = 'ADD_DATA',
 }
 
-//описываем кейс доставая из перечисления имя переменной
-export interface AddTableName {
-  type: homePageActionsTypes.ADD_GAME_PARAMS,
+export interface AddData {
+  type: tableActionsTypes.ADD_DATA,
 }
 
-//описываем экшен
-export interface tableRowsAction {
+export interface tableDataAction {
   type: string;
   payload?: any;
 }
+

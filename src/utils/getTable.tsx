@@ -14,7 +14,7 @@ export function getEmptyRow(result: string[]) {
 export function getContentRow(result: string[], array: any[], onHandler: any) {
   return(
     array.map((item) => 
-      <tr className='fullRow' id={item.id}>
+      <tr key={item.id} className='fullRow' id={item.id} style={{display: item.display ? '' : 'none'}}>
         <td className='headcol'>
           <div className='headcol__block' style={{paddingLeft: `calc(${item.lavel} * 10px)`}}>
             <div className='headcol__arrow-icon' onClick={onHandler}>{item.child > 0 ? <ArrowIcon /> : ''}</div>
