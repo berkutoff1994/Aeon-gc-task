@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { LavelFive } from '../../icons/lavelFive';
 import { LavelFour } from '../../icons/lavelFour';
 import { LavelOne } from '../../icons/lavelOne';
@@ -25,11 +25,12 @@ export function TableBody ({result}: any) {
   
   const onHandler = (e: any) => {
     //получаем id строки по которой был клик
-    let idRow = e.target.closest('.fullRow').id // id приходит
+    let idRow = e.target.closest('.fullRow').id
     let item = tasks.filter((el: any) => el.id == idRow)[0]
     let child = item.subtasks
+
     let newArray = tasks.map((task: {
-      display: boolean; id: any; 
+      display: boolean; id: number; 
       }) => {
       //если родитель открыт а дочерний скрыт то открываем дочерний
       if(child.includes(task.id) && task.display === false && item.display === true) {
@@ -43,25 +44,17 @@ export function TableBody ({result}: any) {
       } 
       else return task //иначе просто возвращаем элемент без изменений
     })
-    setTasks(newArray)
-
-
-      // for(let i = 0; i < childID.length; i++) {
-      //   if(document.getElementById(childID[i])?.classList.contains('displayNone') 
-      //   && !document.getElementById(item[0].id)?.classList.contains('displayNone')) {
-      //     document.getElementById(childID[i])?.classList.remove('displayNone')
-      //     if(childID.length === 1) {
-      //       return
-      //     }
-      //   } else {
-      //     document.getElementById(childID[i])?.classList.add('displayNone')
-      //   }
-      //   getDisplay(childID[i])
-      // }
+    //дополнительно проверяем дочерние элементы и скрываем их если parent === false
+    for(let i = 0; i < newArray.length; i++) {
+     if(newArray.find((el: {
+       display: boolean; id: number; 
+        }) => el.id === newArray[i].parent && el.display === false)) {
+      newArray[i].display = false
+     }
+    }
+  setTasks(newArray)
   }
 
-  
-  console.log('ререндер')
   return(
     <tbody className='tbody'>
       {getEmptyRow(result)}
