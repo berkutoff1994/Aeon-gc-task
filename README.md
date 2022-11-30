@@ -2,7 +2,7 @@
 <h1>About The Project</h1>
 
 Это тестовое задание - chart таблица, данные в которую выводятся после получения их с API.
-При создании использовались: JavaScript, React.js, SCSS, TypeScript, Redux.
+При создании использовались: JavaScript, React, SCSS, TypeScript, Redux.
 
 Для запуска приложения:
 * Клонируйте репозиторий на свой локальный компьютер командой "git clone"
